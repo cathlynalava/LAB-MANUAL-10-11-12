@@ -1,0 +1,37 @@
+@keyframes sailSeas {
+    0%   {background-position: 0 0, 0 0;}
+    50%  {background-position: 400% 0, 0 100%;}
+    100% {background-position: 0 0, 0 0;}
+  }
+  
+  .onepiece-bg {
+    height: 100%;
+    background:
+      radial-gradient(circle at 50% 50%,
+        rgba(92, 161, 161, 0.07) 0 40%, transparent 41%) repeat,
+      linear-gradient(120deg, #ff0458 0%, #0067d9 25%, #00ffff 60%);
+    background-size:
+      30px 30px,      
+      400% 400%;      
+    animation: sailSeas 30s cubic-bezier(.45,.05,.55,.95) infinite;
+    position: relative;
+    overflow: hidden; 
+  }
+  
+  @keyframes confettiFall {
+    0%   {transform: translate3d(var(--startX), -10vh, 0) rotate(0turn);}
+    100% {transform: translate3d(var(--endX), 110vh, 0) rotate(1turn);}
+  }
+  
+  .confetti {
+    --size: 40px;             
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    top: -10vh;              
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23fff' stroke-width='8'%3E%3Ccircle cx='60' cy='60' r='38' fill='%23000'/%3E%3Cpath d='M10 60h100M60 10v100'/%3E%3C/g%3E%3Ccircle cx='60' cy='60' r='22' fill='%23ffd54f' stroke='%23fff' stroke-width='6'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;    
+    animation: confettiFall var(--time) linear infinite;
+  }
